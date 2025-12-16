@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NOW CITY - Merge Architect</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/galmuri/dist/galmuri.css">
+    <style>
+      /* Retro Korean Pixel Font */
+      .font-pixel {
+        font-family: 'Galmuri9', 'Press Start 2P', sans-serif;
+        font-weight: bold;
+      }
+      /* Monospace for UI */
+      .font-mono {
+        font-family: 'Galmuri11', 'Space Mono', monospace;
+      }
+      
+      /* Hide scrollbar */
+      body {
+        overscroll-behavior: none;
+      }
+
+      /* Animations */
+      @keyframes sweat {
+        0% { opacity: 0; transform: translateY(-5px); }
+        50% { opacity: 1; transform: translateY(0); }
+        100% { opacity: 0; transform: translateY(5px); }
+      }
+      .animate-sweat {
+        animation: sweat 1s infinite;
+      }
+
+      @keyframes angry-shake {
+        0%, 100% { transform: translateX(0); }
+        25% { transform: translateX(-1px) rotate(-1deg); }
+        75% { transform: translateX(1px) rotate(1deg); }
+      }
+      .animate-angry {
+        animation: angry-shake 2s infinite ease-in-out;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-slate-900 text-white overflow-hidden">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

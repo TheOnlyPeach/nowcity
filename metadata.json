@@ -1,0 +1,5 @@
+{
+  "name": "Merge Architect",
+  "description": "A 2048-style puzzle game where architects merge materials to build landmarks, contributing to a shared company city.",
+  "requestFramePermissions": []
+}
