@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: ["main"] # main 브랜치에 코드가 올라오면 실행
+    branches: ["main"]
 
 permissions:
   contents: read
@@ -15,26 +15,20 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
-
       - name: Install dependencies
         run: npm install
-
-      # [중요] 여기서 GitHub에 등록한 Secret을 가져와서 빌드에 사용합니다.
       - name: Build
         run: npm run build
         env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }} # GitHub Settings에 등록한 Secret 사용
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
-
   deploy:
     environment:
       name: github-pages
